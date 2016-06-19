@@ -1,8 +1,8 @@
 class Hhvm < Formula
   desc "JIT compiler and runtime for the PHP and Hack languages"
   homepage "http://hhvm.com/"
-  url "http://dl.hhvm.com/source/hhvm-3.13.1.tar.bz2"
-  sha256 "62dd50ff5615acf6b2a350f9f571ef3571bc4304ee8ed94ac9a3fe62d5cbe8a1"
+  url "http://dl.hhvm.com/source/hhvm-3.14.1.tar.bz2"
+  sha256 "6273e489602223d977c0f6b0fa9d12ca9816f6b7498277f9e6f53e10e1d0853e"
   revision 1
 
   head "https://github.com/facebook/hhvm.git"
@@ -55,44 +55,6 @@ class Hhvm < Formula
   depends_on "readline"
   depends_on "sqlite"
   depends_on "tbb"
-
-  stable do
-    # Fix hh_server.
-    patch do
-      url "https://github.com/facebook/hhvm/commit/fead9b7c43b03f4b3d711019bc6395ef140f265c.patch"
-      sha256 "8245b7da1804d8afe8a24f3e079a46829927cdd1fcf7335b9147dabf3d60c92f"
-    end
-
-    # Fix build with OCaml 4.03 (part 1)
-    patch do
-      url "https://github.com/facebook/hhvm/commit/59d7d2885e21cfda51ea3d436522807383d5bfff.patch"
-      sha256 "e63e1a460ff8e62b8aa5cc90d5a155b2b159e67a7fe5e131f1dc4f69a5c825a6"
-    end
-
-    # Fix build with OCaml 4.03 (part 2)
-    patch do
-      url "https://github.com/facebook/hhvm/commit/57580d81e4b1da628c82d6d28d257f483aaa7b14.patch"
-      sha256 "9c1dfda6a3ca98b8ba7a3956a74bfd43b4a6a185b7503addd2c8fc6c6f0e9d0c"
-    end
-
-    # Fix build with OCaml 4.03 (part 3)
-    patch do
-      url "https://github.com/facebook/hhvm/commit/5e92f7701626ebd7eb3c5b8bd57f186cb8e9e3b2.patch"
-      sha256 "a21ce61876099114b8310999d1de851fcd064bebf1eeea70d1f978d60ecdbd4d"
-    end
-
-    # Fix build with OCaml 4.03 (part 4)
-    patch do
-      url "https://github.com/facebook/hhvm/commit/9d3fff4b0f05b1ed568f93d4bbc9e0336baffbf0.patch"
-      sha256 "a09373467d2e9806a434c6b4407c36c14fb7f70e98b73da506a3d09ef9d0f4dc"
-    end
-
-    # Fix build with OCaml 4.03 (part 5)
-    patch do
-      url "https://github.com/facebook/hhvm/commit/21004b2dba474ea22cdd4a0d0fa47a849ac14367.patch"
-      sha256 "b9236638363c2a1dfd5d23f5f05da0ff80a42d016b8bf3bfe960b6f6e5778fd3"
-    end
-  end
 
   def install
     # Work around https://github.com/Homebrew/homebrew/issues/42957 by making
