@@ -1,11 +1,9 @@
 class Hhvm < Formula
   desc "JIT compiler and runtime for the PHP and Hack languages"
   homepage "http://hhvm.com/"
-  url "http://dl.hhvm.com/source/hhvm-3.14.1.tar.bz2"
-  sha256 "6273e489602223d977c0f6b0fa9d12ca9816f6b7498277f9e6f53e10e1d0853e"
   revision 1
 
-  stable do
+  devel do
     # Fix build with OCaml 4.03 (part 5)
     patch do
       url "https://github.com/facebook/hhvm/commit/21004b2dba474ea22cdd4a0d0fa47a849ac14367.patch"
@@ -13,8 +11,7 @@ class Hhvm < Formula
     end
   end
 
-
-  head "https://github.com/facebook/hhvm.git"
+  head "https://github.com/facebook/hhvm.git", :tag => "HHVM-3.14.1"
 
   option "with-debug", <<-EOS.undent
     Make an unoptimized build with assertions enabled. This will run PHP and
