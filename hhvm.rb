@@ -5,6 +5,15 @@ class Hhvm < Formula
   sha256 "6273e489602223d977c0f6b0fa9d12ca9816f6b7498277f9e6f53e10e1d0853e"
   revision 1
 
+  stable do
+    # Fix build with OCaml 4.03 (part 5)
+    patch do
+      url "https://github.com/facebook/hhvm/commit/21004b2dba474ea22cdd4a0d0fa47a849ac14367.patch"
+      sha256 "b9236638363c2a1dfd5d23f5f05da0ff80a42d016b8bf3bfe960b6f6e5778fd3"
+    end
+  end
+
+
   head "https://github.com/facebook/hhvm.git"
 
   option "with-debug", <<-EOS.undent
